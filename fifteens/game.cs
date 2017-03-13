@@ -9,7 +9,7 @@ namespace fifteens
 {
     class game
     {
-        public int[,] field;
+        public int[,] field; 
 
         public game(int size)
         {
