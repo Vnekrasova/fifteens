@@ -9,57 +9,14 @@ namespace fifteens
 {
     class game
     {
-        public int[,] field; 
+        public readonly int[,] field; 
 
         public game(int size)
         {
             this.field = new int[size, size];
         }
 
-        public void Fillig(Random gen)
-        {
-            int[] numbers = new int[field.Length];
-            for (int i = 0; i < numbers.Length; i++)
-            {
-                numbers[i] = gen.Next(0, field.Length);
-                int y = numbers[i];
-                if (i >= 1)
-                {
-                    for (int j = 0; j < i; j++)
-                    {
-                        while (numbers[i] == numbers[j])
-                        {
-                            numbers[i] = gen.Next(0, field.Length);
-                            j = 0;
-                            y = numbers[i];
-                        }
-                        y = numbers[i];
-                    }
-                }
-                //Console.WriteLine("{0},{1}",numbers[i],i);
-            }
-
-            for (int i = 0; i < field.GetLength(0); i++)
-            {
-                for (int j = 0; j < field.GetLength(1); j++)
-                {
-                    field[i, j] = numbers[i * field.GetLength(0) + j];
-
-                }
-            }
-        }
-        public void Printing()
-        {
-            for (int i = 0; i < field.GetLength(0); i++)
-            {
-                for (int j = 0; j < field.GetLength(1); j++)
-                {
-                    Console.Write("{0}\t", field[i, j]);
-
-                }
-                Console.WriteLine();
-            }
-        }
+        
         public int this[int x,int y]
         {
             get
@@ -90,7 +47,7 @@ namespace fifteens
             return address;
         }
 
-        public bool Shift(int value)
+        public virtual bool Shift(int value)
         {
             int[] addressofvalue = GetLocation(value);
             int[] addressofzero = GetLocation(0);
@@ -108,32 +65,7 @@ namespace fifteens
             else return false;
 
         }
-        public bool CheckingSequence()
-        {
-            int[] numbers = new int[field.Length];
-            for (int i = 0; i < numbers.Length; i++)
-            {
-                if (i == numbers.Length - 1)
-                {
-                    numbers[i] = 0;
-                }
-                else
-                {
-                    numbers[i] = i + 1;
-                }
-            }
-            for (int i = 0; i < field.GetLength(0); i++)
-            {
-                for (int j = 0; j < field.GetLength(1); j++)
-                {
-                    if (field[i, j] != numbers[i*field.GetLength(0)+j])
-                    {
-                        return false;
-                    }
-                }
-            }
-            return true;
-        }
+
 
     }
 }

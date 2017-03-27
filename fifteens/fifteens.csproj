@@ -44,7 +44,10 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="game.cs" />
+    <Compile Include="game2.cs" />
+    <Compile Include="game3.cs" />
     <Compile Include="menu.cs" />
+    <Compile Include="print.cs" />
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>

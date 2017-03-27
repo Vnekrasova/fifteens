@@ -11,16 +11,8 @@ namespace fifteens
     {
         static void Main(string[] args)
         {
-            menu.StartTheGame();
-            Console.WriteLine("Хотите сыграть еще раз: да/нет ");
-            string answer = Convert.ToString(Console.ReadLine());
-            while (answer=="да")
-            {
-                Console.Clear();
-                menu.StartTheGame();
-            }
-            Console.WriteLine("Спасибо за игру!");
-            Console.ReadLine();
+             menu.StartTheGame();     
+             Console.ReadLine();
         }
     }
 }
