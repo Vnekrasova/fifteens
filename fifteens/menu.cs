@@ -18,7 +18,7 @@ namespace fifteens
             game3 player = new game3(number);
             player.Randomize();            
             
-            //player.Fillig(gen);
+            //player.Fillig(gen); 
             Console.Clear();
             while (!player.CheckingSequence())
             {
